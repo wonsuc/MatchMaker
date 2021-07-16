@@ -32,6 +32,18 @@ fun main(args: Array<String>) {
 
     val matchedResult = """
         
+        [Players]
+        Player 1 - User ID: ${player1.userId}  Max Tier: ${player1.maxTier}  Score: ${player1.maxTierPoint}
+        Player 2 - User ID: ${player2.userId}  Max Tier: ${player2.maxTier}  Score: ${player2.maxTierPoint}
+        Player 3 - User ID: ${player3.userId}  Max Tier: ${player3.maxTier}  Score: ${player3.maxTierPoint}
+        Player 4 - User ID: ${player4.userId}  Max Tier: ${player4.maxTier}  Score: ${player4.maxTierPoint}
+        Player 5 - User ID: ${player5.userId}  Max Tier: ${player5.maxTier}  Score: ${player5.maxTierPoint}
+        Player 6 - User ID: ${player6.userId}  Max Tier: ${player6.maxTier}  Score: ${player6.maxTierPoint}
+        Player 7 - User ID: ${player7.userId}  Max Tier: ${player7.maxTier}  Score: ${player7.maxTierPoint}
+        Player 8 - User ID: ${player8.userId}  Max Tier: ${player8.maxTier}  Score: ${player8.maxTierPoint}
+        Player 9 - User ID: ${player9.userId}  Max Tier: ${player9.maxTier}  Score: ${player9.maxTierPoint}
+        Player 10 - User ID: ${player10.userId}  Max Tier: ${player10.maxTier}  Score: ${player10.maxTierPoint}
+        
         [Team A]
         User ID: ${matchMaker.teamA[0].userId}  Max Tier: ${matchMaker.teamA[0].maxTier}  Score: ${matchMaker.teamA[0].maxTierPoint}
         User ID: ${matchMaker.teamA[1].userId}  Max Tier: ${matchMaker.teamA[1].maxTier}  Score: ${matchMaker.teamA[1].maxTierPoint}
