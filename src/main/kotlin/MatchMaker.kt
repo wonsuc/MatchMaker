@@ -20,7 +20,7 @@ class MatchMaker {
     }
 
     fun calculateAll() {
-        players.map { player ->
+        players.shuffled().map { player ->
             player.maxTierPoint = calculateTierPoint(player)
         }
 //        players = ArrayList(players.sortedWith(compareByDescending { it.maxTierName.code }))
@@ -39,9 +39,9 @@ class MatchMaker {
         val tierCalculated: Double = player.maxTierName.code * player.maxTierName.tierRatio
         // println("calculateTierPoint:tierCalculated:${tierCalculated}")
         var levelCalculated: Double = player.maxTierLevel.toDouble()
-        if (!player.maxTierName.isLevelPoint) {
-            levelCalculated = 5 - levelCalculated
-        }
+        // if (!player.maxTierName.isLevelPoint) {
+        levelCalculated = 5 - levelCalculated
+        // }
         levelCalculated *= player.maxTierName.levelRatio
         // println("calculateTierPoint:levelCalculated:${levelCalculated}")
         val tierPoint = tierCalculated + levelCalculated
@@ -53,7 +53,7 @@ class MatchMaker {
         val teamB: ArrayList<Player> = ArrayList()
 
         // NOTE: 내림차 순으로 정렬한다.
-        players = ArrayList(players.sortedWith(compareBy { it.maxTierPoint }))
+        players = ArrayList(players.sortedWith(compareBy({ it.maxTierPoint }, { Random.nextBoolean() })))
 
         var indexA = 0
         var indexB = 0

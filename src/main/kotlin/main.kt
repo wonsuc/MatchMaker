@@ -1,17 +1,18 @@
+import constants.Lane
 import constants.Tier
 import model.Player
 
 fun main(args: Array<String>) {
-    val player1 = Player("user1", Tier.IRON, 4)
-    val player2 = Player("user2", Tier.IRON, 3)
-    val player3 = Player("user3", Tier.EMERALD, 1)
-    val player4 = Player("user4", Tier.GRAND_MASTER, 126)
-    val player5 = Player("user5", Tier.GOLD, 3)
-    val player6 = Player("user6", Tier.DIAMOND, 50)
-    val player7 = Player("user7", Tier.PLATINUM, 1)
-    val player8 = Player("user8", Tier.PLATINUM, 4)
-    val player9 = Player("user9", Tier.DIAMOND, 120)
-    val player10 = Player("user10", Tier.EMERALD, 3)
+    val player1 = Player("1일8똥#9857", Tier.DIAMOND, 4, mutableListOf(Lane.JUNGLE))
+    val player2 = Player("안녕하세요#7178", Tier.EMERALD, 4, mutableListOf(Lane.SUPPORT, Lane.TOP))
+    val player3 = Player("Ez 귀여운블란이#0000", Tier.DIAMOND, 2, mutableListOf(Lane.JUNGLE))
+    val player4 = Player("탑에서 혜지챔쓰는 김정은#6666", Tier.PLATINUM, 3, mutableListOf(Lane.TOP, Lane.MID, Lane.ADC, Lane.SUPPORT, Lane.JUNGLE))
+    val player5 = Player("TWILIGHT7#KR1", Tier.PLATINUM, 4, mutableListOf(Lane.MID, Lane.JUNGLE))
+    val player6 = Player("윈스터언#KR1", Tier.DIAMOND, 3, mutableListOf(Lane.MID, Lane.ADC))
+    val player7 = Player("Hide on bus#8616", Tier.PLATINUM, 3, mutableListOf(Lane.MID, Lane.SUPPORT))
+    val player8 = Player("잼민이랑말안섞음#1988", Tier.EMERALD, 3, mutableListOf(Lane.TOP, Lane.ADC, Lane.SUPPORT))
+    val player9 = Player("펭sure#KR1", Tier.DIAMOND, 4, mutableListOf(Lane.TOP, Lane.MID))
+    val player10 = Player("탑신병자김신건#KR1", Tier.PLATINUM, 2, mutableListOf(Lane.TOP, Lane.SUPPORT))
 
     val matchMaker = MatchMaker()
     matchMaker.add(player1)
@@ -32,37 +33,36 @@ fun main(args: Array<String>) {
 
     val matchedResult = """
         
-        [Players]
-        Player 1 - User ID: ${player1.userId}  Max Tier: ${player1.maxTier}  Score: ${player1.maxTierPoint}
-        Player 2 - User ID: ${player2.userId}  Max Tier: ${player2.maxTier}  Score: ${player2.maxTierPoint}
-        Player 3 - User ID: ${player3.userId}  Max Tier: ${player3.maxTier}  Score: ${player3.maxTierPoint}
-        Player 4 - User ID: ${player4.userId}  Max Tier: ${player4.maxTier}  Score: ${player4.maxTierPoint}
-        Player 5 - User ID: ${player5.userId}  Max Tier: ${player5.maxTier}  Score: ${player5.maxTierPoint}
-        Player 6 - User ID: ${player6.userId}  Max Tier: ${player6.maxTier}  Score: ${player6.maxTierPoint}
-        Player 7 - User ID: ${player7.userId}  Max Tier: ${player7.maxTier}  Score: ${player7.maxTierPoint}
-        Player 8 - User ID: ${player8.userId}  Max Tier: ${player8.maxTier}  Score: ${player8.maxTierPoint}
-        Player 9 - User ID: ${player9.userId}  Max Tier: ${player9.maxTier}  Score: ${player9.maxTierPoint}
-        Player 10 - User ID: ${player10.userId}  Max Tier: ${player10.maxTier}  Score: ${player10.maxTierPoint}
+        [참가멤버]
+        1. ID: ${player1.userId} / 최대티어: ${player1.maxTier} / 라인: ${player1.lanes} (점수: ${player1.maxTierPoint})
+        2. ID: ${player2.userId} / 최대티어: ${player2.maxTier} / 라인: ${player2.lanes} (점수: ${player2.maxTierPoint})
+        3. ID: ${player3.userId} / 최대티어: ${player3.maxTier} / 라인: ${player3.lanes} (점수: ${player3.maxTierPoint})
+        4. ID: ${player4.userId} / 최대티어: ${player4.maxTier} / 라인: ${player4.lanes} (점수: ${player4.maxTierPoint})
+        5. ID: ${player5.userId} / 최대티어: ${player5.maxTier} / 라인: ${player5.lanes} (점수: ${player5.maxTierPoint})
+        6. ID: ${player6.userId} / 최대티어: ${player6.maxTier} / 라인: ${player6.lanes} (점수: ${player6.maxTierPoint})
+        7. ID: ${player7.userId} / 최대티어: ${player7.maxTier} / 라인: ${player7.lanes} (점수: ${player7.maxTierPoint})
+        8. ID: ${player8.userId} / 최대티어: ${player8.maxTier} / 라인: ${player8.lanes} (점수: ${player8.maxTierPoint})
+        9. ID: ${player9.userId} / 최대티어: ${player9.maxTier} / 라인: ${player9.lanes} (점수: ${player9.maxTierPoint})
+        10. ID: ${player10.userId} / 최대티어: ${player10.maxTier} / 라인: ${player10.lanes} (점수: ${player10.maxTierPoint})
         
-        [Team A]
-        User ID: ${matchMaker.teamA[0].userId}  Max Tier: ${matchMaker.teamA[0].maxTier}  Score: ${matchMaker.teamA[0].maxTierPoint}
-        User ID: ${matchMaker.teamA[1].userId}  Max Tier: ${matchMaker.teamA[1].maxTier}  Score: ${matchMaker.teamA[1].maxTierPoint}
-        User ID: ${matchMaker.teamA[2].userId}  Max Tier: ${matchMaker.teamA[2].maxTier}  Score: ${matchMaker.teamA[2].maxTierPoint}
-        User ID: ${matchMaker.teamA[3].userId}  Max Tier: ${matchMaker.teamA[3].maxTier}  Score: ${matchMaker.teamA[3].maxTierPoint}
-        User ID: ${matchMaker.teamA[4].userId}  Max Tier: ${matchMaker.teamA[4].maxTier}  Score: ${matchMaker.teamA[4].maxTierPoint}
-        Total Score: $teamAsum
+        [A팀]
+        ID: ${matchMaker.teamA[0].userId} / 최대티어: ${matchMaker.teamA[0].maxTier} / 라인: ${matchMaker.teamA[0].lanes} (점수: ${matchMaker.teamA[0].maxTierPoint})
+        ID: ${matchMaker.teamA[1].userId} / 최대티어: ${matchMaker.teamA[1].maxTier} / 라인: ${matchMaker.teamA[1].lanes} (점수: ${matchMaker.teamA[1].maxTierPoint})
+        ID: ${matchMaker.teamA[2].userId} / 최대티어: ${matchMaker.teamA[2].maxTier} / 라인: ${matchMaker.teamA[2].lanes} (점수: ${matchMaker.teamA[2].maxTierPoint})
+        ID: ${matchMaker.teamA[3].userId} / 최대티어: ${matchMaker.teamA[3].maxTier} / 라인: ${matchMaker.teamA[3].lanes} (점수: ${matchMaker.teamA[3].maxTierPoint})
+        ID: ${matchMaker.teamA[4].userId} / 최대티어: ${matchMaker.teamA[4].maxTier} / 라인: ${matchMaker.teamA[4].lanes} (점수: ${matchMaker.teamA[4].maxTierPoint})
+        총점: $teamAsum
         
-        [Team B]
-        User ID: ${matchMaker.teamB[0].userId}  Max Tier: ${matchMaker.teamB[0].maxTier}  Score: ${matchMaker.teamB[0].maxTierPoint}
-        User ID: ${matchMaker.teamB[1].userId}  Max Tier: ${matchMaker.teamB[1].maxTier}  Score: ${matchMaker.teamB[1].maxTierPoint}
-        User ID: ${matchMaker.teamB[2].userId}  Max Tier: ${matchMaker.teamB[2].maxTier}  Score: ${matchMaker.teamB[2].maxTierPoint}
-        User ID: ${matchMaker.teamB[3].userId}  Max Tier: ${matchMaker.teamB[3].maxTier}  Score: ${matchMaker.teamB[3].maxTierPoint}
-        User ID: ${matchMaker.teamB[4].userId}  Max Tier: ${matchMaker.teamB[4].maxTier}  Score: ${matchMaker.teamB[4].maxTierPoint}
-        Total Score: $teamBsum
+        [B팀]
+        ID: ${matchMaker.teamB[0].userId} / 최대티어: ${matchMaker.teamB[0].maxTier} / 라인: ${matchMaker.teamB[0].lanes} (점수: ${matchMaker.teamB[0].maxTierPoint})
+        ID: ${matchMaker.teamB[1].userId} / 최대티어: ${matchMaker.teamB[1].maxTier} / 라인: ${matchMaker.teamB[1].lanes} (점수: ${matchMaker.teamB[1].maxTierPoint})
+        ID: ${matchMaker.teamB[2].userId} / 최대티어: ${matchMaker.teamB[2].maxTier} / 라인: ${matchMaker.teamB[2].lanes} (점수: ${matchMaker.teamB[2].maxTierPoint})
+        ID: ${matchMaker.teamB[3].userId} / 최대티어: ${matchMaker.teamB[3].maxTier} / 라인: ${matchMaker.teamB[3].lanes} (점수: ${matchMaker.teamB[3].maxTierPoint})
+        ID: ${matchMaker.teamB[4].userId} / 최대티어: ${matchMaker.teamB[4].maxTier} / 라인: ${matchMaker.teamB[4].lanes} (점수: ${matchMaker.teamB[4].maxTierPoint})
+        총점: $teamBsum
     """.trimIndent()
 
     println(matchedResult)
-
 
 
 //    println(player1)
